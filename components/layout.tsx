@@ -6,7 +6,14 @@ import Link from "next/link";
 const name = "Tom";
 export const siteTitle = "Next.js Sample Website";
 
-export default function Layout({ children, home }) {
+export interface LayoutProps extends React.Component<T, {}> {
+  className?: string;
+  children?: any;
+  home?: Boolean;
+}
+
+const Layout: React.FunctionComponent<LayoutProps> = (props) => {
+  const { children, home } = props;
   return (
     <div className={styles.container}>
       <Head>
@@ -63,4 +70,6 @@ export default function Layout({ children, home }) {
       )}
     </div>
   );
-}
+};
+
+export default Layout;
