@@ -5,9 +5,13 @@ import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 import { GetStaticProps } from "next";
 
-export default function Home({ allPostsData }) {
+
+
+const Home: React.SFC<{allPostsData}> = (props)=> {
+  
+  const { allPostsData } = props
   return (
-    <Layout home>
+    <Layout home={true}>
       <Head>
         <title>{siteTitle}</title>
       </Head>
@@ -44,3 +48,5 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   };
 };
+
+export default Home;

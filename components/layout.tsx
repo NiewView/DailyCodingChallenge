@@ -6,7 +6,7 @@ import Link from "next/link";
 const name = "Tom";
 export const siteTitle = "Next.js Sample Website";
 
-export interface LayoutProps extends React.Component<T, {}> {
+export interface LayoutProps  {
   className?: string;
   children?: any;
   home?: Boolean;
