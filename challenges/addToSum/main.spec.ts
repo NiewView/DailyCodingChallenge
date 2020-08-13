@@ -1,13 +1,25 @@
-import { findFirstMissingPositiveInteger } from "./main";
+import { doTwoNumbersAddUpToSum } from "./main";
 
-describe("addToSum", () => {
-  test("check with [3, 4, -1, 1]", () => {
-    expect(findFirstMissingPositiveInteger([3, 4, -1, 1])).toBe(2);
+describe("doTwoNumbersAddToSum", () => {
+  test("check with [10, 15, 3, 7]", () => {
+    const inputArr = [10, 15, 3, 7];
+    expect(doTwoNumbersAddUpToSum(inputArr, 15)).toBe(false);
+    expect(doTwoNumbersAddUpToSum(inputArr, 1)).toBe(false);
+    expect(doTwoNumbersAddUpToSum(inputArr, 0)).toBe(false);
+    expect(doTwoNumbersAddUpToSum(inputArr, 12)).toBe(false);
+    expect(doTwoNumbersAddUpToSum(inputArr, 17)).toBe(true);
+    expect(doTwoNumbersAddUpToSum(inputArr, 25)).toBe(true);
+    expect(doTwoNumbersAddUpToSum(inputArr, 10)).toBe(true);
   });
-  test("check with [1,2,0]", () => {
-    expect(findFirstMissingPositiveInteger([1,2,0])).toBe(3);
-  });
-  test("check with [-1,1,2,0,3,4,-9,10]", () => {
-    expect(findFirstMissingPositiveInteger([-1,1,2,0,3,4,-9,10])).toBe(5);
+
+  test("check with [9, 5, 3, -3]", () => {
+    const inputArr = [9, 5, 3, -3];
+    expect(doTwoNumbersAddUpToSum(inputArr, 15)).toBe(false);
+    expect(doTwoNumbersAddUpToSum(inputArr, 1)).toBe(false);
+    expect(doTwoNumbersAddUpToSum(inputArr, 0)).toBe(true);
+    expect(doTwoNumbersAddUpToSum(inputArr, 12)).toBe(true);
+    expect(doTwoNumbersAddUpToSum(inputArr, 17)).toBe(false);
+    expect(doTwoNumbersAddUpToSum(inputArr, 14)).toBe(true);
+    expect(doTwoNumbersAddUpToSum(inputArr, 6)).toBe(true);
   });
 });

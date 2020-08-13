@@ -1,4 +1,4 @@
-# Do Two Numbers add to sum
+# Do two numbers add to sum
 
 Good morning! Here's your coding interview problem for today.
 

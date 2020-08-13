@@ -1,4 +1,4 @@
-# First Missing Positive Integer
+# First missing positive integer
 
 This problem was asked by Stripe.
 

@@ -1,11 +1,13 @@
-export const findFirstMissingPositiveInteger = (
+export const doTwoNumbersAddUpToSum = (
   inputArr: number[],
-): number => {
-  let set = new Set(inputArr);
-  for (let i = 1; i < inputArr.length+1; i++) {
-    if(!set.has(i)){
-      return i;
+  expectedSum: number
+): boolean => {
+  const expectedMap = new Map(inputArr.map((i) => [expectedSum - i, true]));
+  for (let index = 0; index < inputArr.length; index++) {
+    const element = inputArr[index];
+    if (expectedMap.has(element)) {
+      return true;
     }
   }
-  throw new Error("an unkown error occured");
+  return false;
 };
