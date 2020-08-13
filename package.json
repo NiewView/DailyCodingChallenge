@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "daily-coding-challenge",
-  "version": "2.0.0-rc.41",
+  "version": "1.0.0",
   "license": "MIT",
   "files": [
     "src/",
