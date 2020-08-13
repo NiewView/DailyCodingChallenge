@@ -1,5 +1,6 @@
 node_modules
 .docz
 testresult.json
-*.mdx
+challenges\**\*.mdx
+challenges/**/*.mdx
 testresults.json

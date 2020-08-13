@@ -28,7 +28,8 @@ dirs.forEach(dirpath=>{
 
     let out = `---
 name: ${description.match(/^# (.*)/m)[1]}
-route: /${challenge_name}
+menu: Challenges
+route: /challenges/${challenge_name}
 ---`;
     out += "\n\n" + description;
     out += "\n\n ## Implementation\n\n"
