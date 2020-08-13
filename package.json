@@ -13,7 +13,7 @@
     "dev": "docz dev",
     "generatemdx": "node generateMdx.js",
     "generatetestoutput": "jest --json --outputFile=testresults.json",
-    "build": "npm run generatetestoutput & npm run generatemdx & docz build",
+    "build": "npm run generatetestoutput && npm run generatemdx && docz build",
     "test": "jest"
   },
   "dependencies": {
