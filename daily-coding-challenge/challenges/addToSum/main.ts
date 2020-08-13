@@ -2,7 +2,6 @@ export const findFirstMissingPositiveInteger = (
   inputArr: number[],
 ): number => {
   let set = new Set(inputArr);
-  console.log(set)
   for (let i = 1; i < inputArr.length+1; i++) {
     if(!set.has(i)){
       return i;

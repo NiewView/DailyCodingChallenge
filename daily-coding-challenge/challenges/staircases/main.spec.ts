@@ -1,6 +1,6 @@
 import { getUniqueWaysToClimbStaircase } from "./main";
 
-describe("getUniqueWaysToClimbStaircases", () => {
+describe("staircases", () => {
   test("check for 1 and 2 climbs", () => {
     expect(getUniqueWaysToClimbStaircase(1)).toBe(1);
     expect(getUniqueWaysToClimbStaircase(2)).toBe(2);

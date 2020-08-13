@@ -11,17 +11,25 @@
   ],
   "scripts": {
     "dev": "docz dev",
-    "build": "docz build"
+    "generatemdx": "node generateMdx.js",
+    "generatetestoutput": "jest --json --outputFile=testresults.json",
+    "build": "npm run generatetestoutput & npm run generatemdx & docz build",
+    "test": "jest"
   },
   "dependencies": {
     "@emotion/core": "^10.0.14",
     "@emotion/styled": "^10.0.14",
     "docz": "latest",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "ts-jest": "^26.1.1"
   },
   "devDependencies": {
     "@types/react": "^16.8.23",
-    "@types/react-dom": "^16.8.4"
+    "@types/react-dom": "^16.8.4",
+    "@types/jest": "^26.0.3",
+    "@types/node": "^14.0.14",
+    "jest": "^26.1.0",
+    "typescript": "^3.9.6"
   }
 }
