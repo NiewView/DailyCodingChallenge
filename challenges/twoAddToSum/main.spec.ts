@@ -1,6 +1,6 @@
 import { doTwoNumbersAddUpToSum } from "./main";
 
-describe("doTwoNumbersAddToSum", () => {
+describe("twoAddToSum", () => {
   test("check with [10, 15, 3, 7]", () => {
     const inputArr = [10, 15, 3, 7];
     expect(doTwoNumbersAddUpToSum(inputArr, 15)).toBe(false);
