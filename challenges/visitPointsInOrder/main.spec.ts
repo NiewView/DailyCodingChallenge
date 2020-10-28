@@ -47,7 +47,7 @@ describe("staircases", () => {
       ])
     ).toBe(11);
   });
-  test("check if [[3,6],[1,2],[9,3],[5,2]] results in ", () => {
+  test("check if [[3,6],[1,2],[9,3],[5,2]] results in 16 steps", () => {
     expect(
       visitPointsInOrder([
         [3, 6],
