@@ -1,5 +1,16 @@
 export function longestConsecutiveSequence(input: Array<number>): number {
-  const sequences = new Map();
-  input;
+  let boundaries = new Map();
+  const addValueToBoundary = (newValue: number) => {
+    if (boundaries.has(newValue + 1)) {
+      boundaries.get(newValue);
+    }
+  };
+  let sequenceLength: Array<number> = [];
+  input.forEach((value) => {
+    if (boundaries.has(value)) {
+      sequenceLength[boundaries.get(value)] += 1;
+    } else {
+    }
+  });
   return 0;
 }
