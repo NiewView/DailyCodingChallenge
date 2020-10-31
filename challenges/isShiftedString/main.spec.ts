@@ -2,7 +2,7 @@ import { isSecondStringShiftedVariantOfFirst } from "./main";
 
 const inputs = [8, 156, 14, 62, 1568, 352, 4];
 
-describe("isSecondStringShiftedVariantOfFirst", () => {
+describe("isShiftedString", () => {
   test(`should return true if it is a shifted version`, () => {
     expect(isSecondStringShiftedVariantOfFirst("abcde", "cdeab")).toBeTruthy();
     expect(isSecondStringShiftedVariantOfFirst("hallo", "alloh")).toBeTruthy();

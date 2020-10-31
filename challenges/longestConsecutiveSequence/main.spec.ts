@@ -1,6 +1,6 @@
 import { longestConsecutiveSequence } from "./main";
 
-describe("staircases", () => {
+describe("longestConsecutiveSequence", () => {
   test("[100, 4, 200, 1, 3, 2]", () => {
     // 1-4
     expect(longestConsecutiveSequence([100, 4, 200, 1, 3, 2])).toBe(4);

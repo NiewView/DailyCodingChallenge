@@ -2,7 +2,7 @@ import { twoPrimesSumtoValue } from "./main";
 
 const inputs = [8, 156, 14, 62, 1568, 352, 4];
 
-describe("twoPrimesSumtoValue", () => {
+describe("primeSum", () => {
   inputs.forEach((input) => {
     test(`should return two values, that sum up to input '${input}'`, () => {
       expect(

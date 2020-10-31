@@ -1,6 +1,6 @@
 import { visitPointsInOrder } from "./main";
 
-describe("staircases", () => {
+describe("visitPointsInOrder", () => {
   test("check if [[0,0],[1,1],[1,2]] results in 2 steps", () => {
     expect(
       visitPointsInOrder([

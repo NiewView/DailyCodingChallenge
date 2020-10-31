@@ -1,6 +1,6 @@
 import { findFirstMissingPositiveInteger } from "./main";
 
-describe("addToSum", () => {
+describe("firstMissingPositiveInt", () => {
   test("check with [3, 4, -1, 1]", () => {
     expect(findFirstMissingPositiveInteger([3, 4, -1, 1])).toBe(2);
   });
