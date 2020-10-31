@@ -1,47 +1,38 @@
 export function longestConsecutiveSequence(input: Array<number>): number {
   let maxLength: number = 0; // store maxLength directly to avoid search for maxValue afterwards
   let boundaries: Map<number, number> = new Map();
-  const addValueToBoundary = (newValue: number) => {
-    const canAppendValueToLowerBound = boundaries.has(newValue + 1);
-    const canAppendValueToUpperBound = boundaries.has(newValue - 1);
-    let boundaryDifference = 0;
 
-    if (canAppendValueToLowerBound && canAppendValueToUpperBound) {
-      const boundaryOne: number = boundaries.get(newValue + 1)!;
-      const boundaryTwo: number = boundaries.get(newValue - 1)!;
-      boundaries.delete(newValue - 1);
-      boundaries.delete(newValue + 1);
-      boundaries.set(boundaryOne, boundaryTwo);
-      boundaries.set(boundaryTwo, boundaryOne);
-      boundaryDifference = boundaryOne - boundaryTwo;
-    } else {
-      if (canAppendValueToLowerBound) {
-        const boundaryOne: number = boundaries.get(newValue + 1)!;
-        const boundaryTwo: number = newValue;
-        const isLowerBound = boundaryOne > boundaryTwo;
-        if (isLowerBound) {
-          boundaries.delete(newValue + 1);
-          boundaries.set(boundaryTwo, boundaryOne);
-          boundaries.set(boundaryOne, boundaryTwo);
-        }
-        boundaryDifference = boundaryOne - boundaryTwo;
-      }
-      if (canAppendValueToUpperBound) {
-        const boundaryOne = boundaries.get(newValue - 1)!;
-        const boundaryTwo: number = newValue;
-        const isUpperBound = boundaryOne <= newValue - 1;
-        if (isUpperBound) {
-          boundaries.delete(newValue - 1);
-          boundaries.set(boundaryTwo, boundaryOne);
-          boundaries.set(boundaryOne, boundaryTwo);
-        }
-        boundaryDifference = boundaryOne - boundaryTwo;
-      }
+  if (input.length === 0) {
+    return 0;
+  }
+
+  const addValueToBoundary = (newValue: number) => {
+    let boundaryDifference = 0;
+    const canAppendValueToLowerBound =
+      boundaries.has(newValue + 1) && boundaries.get(newValue + 1)! > newValue;
+    const canAppendValueToUpperBound =
+      boundaries.has(newValue - 1) && boundaries.get(newValue - 1)! < newValue;
+
+    let upperBoundary: number = boundaries.get(newValue + 1)!;
+    let lowerBoundary: number = boundaries.get(newValue - 1)!;
+
+    if (canAppendValueToLowerBound && !canAppendValueToUpperBound) {
+      lowerBoundary = newValue;
+    }
+    if (canAppendValueToUpperBound && !canAppendValueToLowerBound) {
+      upperBoundary = newValue;
     }
 
-    // add value as new boundaries
     if (!canAppendValueToUpperBound && !canAppendValueToLowerBound) {
+      // add value as new boundaries
       boundaries.set(newValue, newValue);
+    } else {
+      // update existing boundaries
+      boundaries.delete(newValue - 1);
+      boundaries.delete(newValue + 1);
+      boundaries.set(upperBoundary, lowerBoundary);
+      boundaries.set(lowerBoundary, upperBoundary);
+      boundaryDifference = upperBoundary - lowerBoundary;
     }
 
     // add 1, because the amount of numbers is asked not difference

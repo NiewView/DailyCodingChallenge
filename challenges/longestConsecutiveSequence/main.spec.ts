@@ -22,4 +22,9 @@ describe("staircases", () => {
     // single number
     expect(longestConsecutiveSequence([1, 3, 5, 7, 9, -1])).toBe(1);
   });
+
+  test("empty array", () => {
+    // empty array
+    expect(longestConsecutiveSequence([])).toBe(0);
+  });
 });
