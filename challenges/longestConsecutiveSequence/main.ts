@@ -8,13 +8,13 @@ export function longestConsecutiveSequence(input: Array<number>): number {
 
   const addValueToBoundary = (newValue: number) => {
     let boundaryDifference = 0;
+    let upperBoundary: number = boundaries.get(newValue + 1)!;
+    let lowerBoundary: number = boundaries.get(newValue - 1)!;
+
     const canAppendValueToLowerBound =
       boundaries.has(newValue + 1) && boundaries.get(newValue + 1)! > newValue;
     const canAppendValueToUpperBound =
       boundaries.has(newValue - 1) && boundaries.get(newValue - 1)! < newValue;
-
-    let upperBoundary: number = boundaries.get(newValue + 1)!;
-    let lowerBoundary: number = boundaries.get(newValue - 1)!;
 
     if (canAppendValueToLowerBound && !canAppendValueToUpperBound) {
       lowerBoundary = newValue;
@@ -24,7 +24,7 @@ export function longestConsecutiveSequence(input: Array<number>): number {
     }
 
     if (!canAppendValueToUpperBound && !canAppendValueToLowerBound) {
-      // add value as new boundaries
+      // add value as new boundaries. boundaryDifference would be 0
       boundaries.set(newValue, newValue);
     } else {
       // update existing boundaries
